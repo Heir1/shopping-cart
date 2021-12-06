@@ -1,0 +1,59 @@
+{
+    "products":[
+        {
+            "_id":"poivron1",
+            "image":"/images/product-1.jpg",
+            "title" : "Les poivrons d'afrique",
+            "description" : "Les poivrons d'afrique sont les meilleurs",
+            "availableSizes" : ["X", "L"],
+            "price" : 100
+        },
+
+        {
+            "_id":"fraise1",
+            "image":"/images/product-2.jpg",
+            "title" : "Les fraises d'afrique",
+            "description" : "Les fraises d'afrique sont les meilleurs",
+            "availableSizes" : ["L"],
+            "price" : 50
+        },
+
+        {
+            "_id":"petitpois1",
+            "image":"/images/product-3.jpg",
+            "title" : "Les petit pois d'afrique",
+            "description" : "Les petit pois d'afrique sont les meilleurs",
+            "availableSizes" : ["XL"],
+            "price" : 100
+        },
+
+        {
+            "_id":"purple1",
+            "image":"/images/product-4.jpg",
+            "title" : "Les purples d'afrique",
+            "description" : "Les purples d'afrique sont les meilleurs",
+            "availableSizes" : ["XXL"],
+            "price" : 50
+        },
+
+        {
+            "_id":"tomate1",
+            "image":"/images/product-5.jpg",
+            "title" : "Les tomates d'afrique",
+            "description" : "Les tomates d'afrique sont les meilleurs",
+            "availableSizes" : ["L"],
+            "price" : 100
+        },
+
+        {
+            "_id":"brocoli1",
+            "image":"/images/product-6.jpg",
+            "title" : "Les brocollis d'afrique",
+            "description" : "Les brocolli d'afrique sont les meilleurs",
+            "availableSizes" : [ "XXL"],
+            "price" : 50
+        }
+
+        
+    ]
+}
