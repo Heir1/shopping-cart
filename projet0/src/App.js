@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Cart from './components/Cart';
 import Filter from './components/Filter';
 import Products from './components/Products';
-import data from "./data.json";
+// import data from "./data.json";
 import store from "./store";
 import {Provider} from "react-redux";
 
@@ -12,11 +12,11 @@ class App extends Component{
     constructor(){
         super();
         this.state = {
-            products: data.products,
+            // products: data.products,
             // make cart persistance even if refreshing
             cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
-            size: "",
-            sort: "",
+            // size: "",
+            // sort: "",
         };
 
         console.log(this.state.cartItems)
@@ -51,43 +51,46 @@ class App extends Component{
         alert("Need to save "+order.name+" "+order.email+" and "+order.address);
     }
 
-    sortProducts = (event) => {
-        // impl
-        const sort = event.target.value;
-        console.log(event.target.value);
+// No sortProducts function anymore
 
-        this.setState({
-            sort:sort,
-            products : this.state.products.slice().sort((a,b) =>(
-                sort === "lowest"
-                    ? a.price > b.price
-                        ? 1 
-                        :-1 
-                    : sort === "highest"
-                    ? a.price < b.price
-                      ? 1 
-                      :-1
-                    : a._id > b._id /* 01:25:28 */
-                    ? 1
-                    :-1
-            ))
-        })
-    }
+    // sortProducts = (event) => {
+    //     // impl
+    //     const sort = event.target.value;
+    //     console.log(event.target.value);
 
-    filterProducts = (event) => {
-        // impl
-        console.log(event.target.value);
-        if(event.target.value === ""){
-            this.setState({ size: event.target.value, products: data.products})
-        } else {
-            this.setState({ 
-              size: event.target.value,
-              products: data.products.filter(
-                  (product) => product.availableSizes.indexOf(event.target.value) >= 0
-              ),
-            });
-        }
-    }
+    //     this.setState({
+    //         sort:sort,
+    //         products : this.state.products.slice().sort((a,b) =>(
+    //             sort === "lowest"
+    //                 ? a.price > b.price
+    //                     ? 1 
+    //                     :-1 
+    //                 : sort === "highest"
+    //                 ? a.price < b.price
+    //                   ? 1 
+    //                   :-1
+    //                 : a._id > b._id /* 01:25:28 */
+    //                 ? 1
+    //                 :-1
+    //         ))
+    //     })
+    // }
+ 
+// No filter product action any more
+    // filterProducts = (event) => {
+    //     // impl
+    //     console.log(event.target.value);
+    //     if(event.target.value === ""){
+    //         this.setState({ size: event.target.value, products: data.products})
+    //     } else {
+    //         this.setState({ 
+    //           size: event.target.value,
+    //           products: data.products.filter(
+    //               (product) => product.availableSizes.indexOf(event.target.value) >= 0
+    //           ),
+    //         });
+    //     }
+    // }
 
     render(){
         return(
@@ -99,12 +102,14 @@ class App extends Component{
                     <main>
                         <div className="content">
                             <div className="main">
-                                <Filter count = {this.state.products.length} 
-                                size={this.state.size}
-                                sort={this.state.sort}
-                                filterProducts={this.filterProducts}
-                                sortProducts={this.sortProducts}
-                                />
+                                {
+                                    /* no more this line of code count = {this.state.products.length} 
+                                    size={this.state.size}
+                                    sort={this.state.sort}
+                                    filterProducts={this.filterProducts}
+                                    sortProducts={this.sortProducts} */
+                                }
+                                <Filter/>
                                 {/* n more thi line of code : products={this.state.products} */}
                                 <Products  addToCart={this.addToCart} />
                             </div>
